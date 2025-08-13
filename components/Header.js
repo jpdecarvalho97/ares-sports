@@ -1,38 +1,32 @@
-import Link from "next/link";
+-import Link from "next/link";
++import Link from "next/link";
++import SearchSuggest from "@/components/SearchSuggest";
 
 export default function Header({ cartCount = 0 }) {
   return (
     <header className="header">
-      <div className="container bar">
+      <div className="container bar" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
         <Link href="/" aria-label="Ares Sports - Início">
           <img src="/logo.png" alt="Ares Sports" style={{ height: "90px" }} />
         </Link>
 
-        {/* Barra de pesquisa */}
-        <form action="/buscar" method="get" className="search" style={{ marginLeft: "20px", flex: 1 }}>
-          <input
-            className="input"
-            type="search"
-            name="q"
-            placeholder="Buscar camisas..."
-            aria-label="Buscar"
-            style={{ width: "100%" }}
-          />
-        </form>
+-       <form action="/buscar" method="get" className="search" style={{ flex: 1 }}>
+-         <input className="input" type="search" name="q" placeholder="Buscar camisas..." aria-label="Buscar" />
+-         <button type="submit">Buscar</button>
+-       </form>
++       <div style={{ flex: 1 }}>
++         <SearchSuggest />
++       </div>
 
-        <nav className="nav" aria-label="Categorias" style={{ marginLeft: "20px" }}>
-          <Link href="/c/brasileiros">Brasileiros</Link>
-          <Link href="/c/internacionais">Internacionais</Link>
-          <Link href="/c/selecoes">Seleções</Link>
-          <Link href="/c/retro">Retrô</Link>
-          <Link href="/c/infantil">Infantil</Link>
-          <Link href="/guia-de-medidas">Guia de Medidas</Link>
+        <nav className="nav" aria-label="Categorias" style={{ display: "flex", gap: "15px" }}>
+          {/* ... */}
         </nav>
 
-        <Link href="/carrinho" className="btn" style={{ marginLeft: "20px" }}>
+        <Link href="/carrinho" className="btn">
           Carrinho ({cartCount})
         </Link>
       </div>
     </header>
   );
 }
+
