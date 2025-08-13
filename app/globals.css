@@ -191,31 +191,40 @@ a{color:inherit;text-decoration:none}
 }
 /* Hero/banner */
 .hero {
-  background: radial-gradient(1200px 600px at 10% -10%, rgba(213,0,0,.12), transparent 70%),
-              radial-gradient(1200px 600px at 90% 120%, rgba(0,0,0,.08), transparent 70%),
-              #111;
+  background: linear-gradient(to bottom, rgba(0,0,0,.60), rgba(0,0,0,.75)),
+              url("/hero.jpg") center/cover no-repeat;
   color: #fff;
   padding: 48px 0 36px;
 }
-.hero .badge{
+
+.hero .badge {
   display:inline-block; font-weight:700; background:#fff; color:#111;
   padding:6px 10px; border-radius:999px; font-size:12px; margin-bottom:10px;
 }
-.hero h1{ font-size: clamp(26px, 4vw, 42px); line-height:1.1; margin: 6px 0; }
-.hero p{ opacity:.95; max-width: 780px; margin: 8px 0 16px; }
 
-.hero .banner{ display:flex; gap:10px; flex-wrap:wrap; }
-.hero .pill{
-  background:#fff; color:#111; border-radius:999px; padding:8px 12px;
-  font-weight:700; font-size:14px;
+.hero h1 {
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.1;
+  margin: 6px 0;
+}
+
+.hero p {
+  opacity:.95;
+  max-width: 780px;
+  margin: 8px 0 16px;
+}
+
+.hero .banner {
+  display:flex; gap:10px; flex-wrap:wrap;
+}
+
+.hero .pill {
+  background:#fff; color:#111; border-radius:999px;
+  padding:8px 12px; font-weight:700; font-size:14px;
   border:2px solid #fff;
 }
-.hero .pill:hover{ background:transparent; color:#fff; }
 
-/* Se quiser imagem de fundo no banner (coloque /public/hero.jpg e ligue HERO.bgImage=true) */
-.hero-bg{
-  background: linear-gradient( to bottom, rgba(0,0,0,.60), rgba(0,0,0,.75) ),
-              url("/hero.jpg") center/cover no-repeat;
+.hero .pill:hover {
+  background:transparent;
+  color:#fff;
 }
-
-
