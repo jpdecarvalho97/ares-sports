@@ -218,11 +218,11 @@ a{color:inherit;text-decoration:none}
   display:flex; gap:10px; flex-wrap:wrap;
 }
 
-.hero .pill {
-  background:#fff; color:#111; border-radius:999px;
-  padding:8px 12px; font-weight:700; font-size:14px;
-  border:2px solid #fff;
+.hero .hero {
+  background: url("/hero.jpg") center/cover no-repeat;
+  height: 400px; /* ou ajuste conforme desejar */
 }
+
 
 .hero .pill:hover {
   background:transparent;

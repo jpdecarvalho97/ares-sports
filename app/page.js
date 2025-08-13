@@ -17,16 +17,8 @@ export default function Home(){
   return (
     <CartProvider>
       <Header />
-      <section className={`hero ${HERO.bgImage ? "hero-bg" : ""}`}>
-        <div className="container">
-          <span className="badge">{HERO.badge}</span>
-          <h1>{HERO.title}</h1>
-          <p>{HERO.subtitle}</p>
-          <div className="banner">
-            {HERO.pills.map((t, i)=> <span key={i} className="pill">{t}</span>)}
-          </div>
-        </div>
-      </section>
+      <section className="hero"></section>
+
 
       <main className="container" style={{padding:"24px 0"}}>
         <div className="space" style={{marginBottom:12}}>
