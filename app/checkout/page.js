@@ -1,10 +1,12 @@
-export const dynamic = 'force-dynamic'; // impede pré-render/SSG
+export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/lib/cart";
-import CheckoutClient from "./CheckoutClient";
+import dynamic from "next/dynamic";
+
+const CheckoutClient = dynamic(() => import("./CheckoutClient"), { ssr: false });
 
 export default function CheckoutPage(){
   return (

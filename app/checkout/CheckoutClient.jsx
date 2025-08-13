@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useCart } from "@/lib/cart";
@@ -74,7 +73,7 @@ export default function CheckoutClient(){
               <button className="btn" onClick={()=>navigator.clipboard.writeText(pix.qr_code)}>Copiar código</button>
               <a className="btn alt" href="/pedido-confirmado">Já paguei</a>
             </div>
-            <p className="small">O QR expira em 30 minutos. Após a confirmação bancária, seu pedido será marcado como <strong>Pago</strong>.</p>
+            <p className="small">O QR expira em 30 minutos…</p>
           </div>
         </div>
       )}
