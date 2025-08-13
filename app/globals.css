@@ -192,8 +192,8 @@ a{color:inherit;text-decoration:none}
 /* Hero/banner - somente imagem */
 .hero {
   background: url("/hero.jpg") center center / cover no-repeat;
-  height: 60vh;         /* ocupa 60% da altura da tela */
-  min-height: 500px;    /* garante altura mínima */
+  height: 45vh;         /* ocupa 45% da altura da tela */
+  min-height: 400px;    /* garante altura mínima */
   width: 100%;
   margin: 0;
   padding: 0;
