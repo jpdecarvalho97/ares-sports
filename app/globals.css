@@ -1,0 +1,94 @@
+:root{
+  --red:#E10600;
+  --black:#111111;
+  --white:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; color:var(--black); background:#fff;}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.header{border-bottom:1px solid #eee; position:sticky; top:0; background:#fff; z-index:10}
+.header .bar{display:flex; align-items:center; gap:16px; height:72px}
+.brand{font-weight:800; letter-spacing:.5px; font-size:1.25rem}
+.badge{display:inline-block; background:var(--red); color:#fff; padding:4px 8px; border-radius:6px; font-size:.75rem; font-weight:700}
+.nav{display:flex; gap:12px; flex-wrap:wrap}
+.nav a{padding:8px 10px; border-radius:6px}
+.nav a:hover{background:#f5f5f5}
+.hero{background:linear-gradient(90deg, var(--black), #6b0000); color:#fff; padding:40px 0}
+.hero h1{font-size:2rem; margin:0 0 12px}
+.hero p{opacity:.9; margin:0 0 16px}
+.cta{background:#fff; color:var(--black); font-weight:800; padding:10px 14px; border-radius:8px; display:inline-block}
+.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+@media(min-width:800px){ .grid{grid-template-columns:repeat(4,1fr)}}
+.card{border:1px solid #eee; border-radius:12px; overflow:hidden; background:#fff}
+.card img{width:100%; height:220px; object-fit:cover; display:block; background:#fff; padding:8px}
+.card .pad{padding:12px}
+.price{display:flex; gap:8px; align-items:baseline}
+.price .old{color:#888; text-decoration:line-through; font-size:.9rem}
+.price .now{color:var(--red); font-weight:800; font-size:1.1rem}
+.footer{border-top:1px solid #eee; padding:24px 0; margin-top:40px; color:#555}
+.btn{display:inline-flex; align-items:center; justify-content:center; padding:10px 14px; border-radius:8px; background:var(--black); color:#fff; font-weight:700}
+.btn.alt{background:var(--red)}
+.table{width:100%; border-collapse:collapse}
+.table th,.table td{padding:10px 12px; border-bottom:1px solid #eee; text-align:left}
+.input{width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:8px}
+.row{display:grid; grid-template-columns:1fr; gap:12px}
+@media(min-width:700px){ .row-2{grid-template-columns:1fr 1fr} .row-3{grid-template-columns:repeat(3,1fr)} }
+.kicker{font-weight:800; color:var(--red); letter-spacing:.4px; text-transform:uppercase; font-size:.75rem}
+.flex{display:flex; gap:12px; align-items:center}
+.space{display:flex; justify-content:space-between; align-items:center}
+.small{font-size:.85rem; color:#666}
+.banner{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0}
+.banner .pill{background:#111; color:#fff; padding:6px 10px; border-radius:999px; font-weight:700}
+.promo{background:#f9f9f9; border:1px dashed #ddd; padding:8px 12px;border-radius:8px}
+.qr{width:240px; height:240px; border:1px solid #eee; border-radius:12px; display:block}
+.card .imgwrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;           /* deixa quadrado */
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.card .imgwrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.table-wrap { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; }
+.table thead tr { background: #fafafa; }
+.table th { font-weight: 800; }
+.btn.outline {
+  background: transparent;
+  color: #555;
+  border: 2px solid #aaa;
+}
+.btn.outline:hover {
+  background: #444;
+  color: #fff;
+  border-color: #444;
+}
+/* Botão cinza discreto */
+.btn.gray {
+  background: transparent;
+  color: #555;
+  border: 2px solid #aaa;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn.gray:hover {
+  background: #444;
+  color: #fff;
+  border-color: #444;
+}
+
+
