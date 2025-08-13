@@ -189,42 +189,12 @@ a{color:inherit;text-decoration:none}
   text-align: center;
   font-weight: 700;
 }
-/* Hero/banner */
+/* Hero/banner - somente imagem */
 .hero {
-  background: linear-gradient(to bottom, rgba(0,0,0,.60), rgba(0,0,0,.75)),
-              url("/hero.jpg") center/cover no-repeat;
-  color: #fff;
-  padding: 48px 0 36px;
-}
-
-.hero .badge {
-  display:inline-block; font-weight:700; background:#fff; color:#111;
-  padding:6px 10px; border-radius:999px; font-size:12px; margin-bottom:10px;
-}
-
-.hero h1 {
-  font-size: clamp(26px, 4vw, 42px);
-  line-height: 1.1;
-  margin: 6px 0;
-}
-
-.hero p {
-  opacity:.95;
-  max-width: 780px;
-  margin: 8px 0 16px;
-}
-
-.hero .banner {
-  display:flex; gap:10px; flex-wrap:wrap;
-}
-
-.hero .hero {
-  background: url("/hero.jpg") center/cover no-repeat;
-  height: 400px; /* ou ajuste conforme desejar */
-}
-
-
-.hero .pill:hover {
-  background:transparent;
-  color:#fff;
+  background: url("/hero.jpg") center center / cover no-repeat;
+  height: 80vh;         /* ocupa 80% da altura da tela */
+  min-height: 500px;    /* garante altura mínima */
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
