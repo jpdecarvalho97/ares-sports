@@ -22,3 +22,12 @@ export default function Header({ cartCount=0 }){
     </header>
   );
 }
+<form action="/buscar" method="get" className="search">
+  <input
+    className="input"
+    type="search"
+    name="q"
+    placeholder="Buscar camisas..."
+    aria-label="Buscar"
+  />
+</form>

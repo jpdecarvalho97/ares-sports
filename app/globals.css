@@ -90,5 +90,20 @@ a{color:inherit;text-decoration:none}
   color: #fff;
   border-color: #444;
 }
+/* Barra de busca */
+.search {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  max-width: 520px;
+  width: 100%;
+}
+.search .input {
+  flex: 1;
+  height: 40px;
+}
+@media (max-width: 640px) {
+  header .search { max-width: 100%; }
+}
 
 
