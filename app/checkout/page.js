@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic'; // não pré-renderizar
+export const dynamic = 'force-dynamic'; // impede pré-render/SSG
 export const revalidate = 0;
 
 import Header from "@/components/Header";
