@@ -80,3 +80,22 @@ export default function CheckoutClient(){
     </main>
   );
 }
+async function pagarComAppmax(order) {
+  const res = await fetch("/api/checkout", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(order), // { customer, items, payment: { method: "pix" } }
+  });
+  const data = await res.json();
+
+  if (data.redirectUrl) {
+    window.location.href = data.redirectUrl; // cartão/checkout hospedado
+    return;
+  }
+  if (data.pix?.qrCodeUrl || data.pix?.copiaECola) {
+    // mostre o QR code/“copia e cola” na tela
+    setPixData(data.pix);
+    return;
+  }
+  alert("Não foi possível iniciar o pagamento.");
+}
