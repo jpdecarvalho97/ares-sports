@@ -300,3 +300,40 @@ img, video { max-width: 100%; height: auto; display: block; }
 .card .actions .btn { flex: 1; min-width: 100px; text-align: center; }
 /* Não force caixa nas labels dos botões */
 .btn { text-transform: none; }
+/* ===== Produto: imagem ===== */
+.prod-figure {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;         /* ajuste se preferir 1/1 */
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+.prod-figure img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Chips de tamanho ===== */
+.size-group { margin: 10px 0 0; }
+.size-label { font-weight: 700; margin-bottom: 8px; }
+.size-grid {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.size-chip {
+  appearance: none;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.size-chip:hover { border-color: #bbb; }
+.size-chip.on {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
