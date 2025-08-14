@@ -1,9 +1,13 @@
-import "./globals.css"; // <- IMPORTANTE: carrega seu CSS global
+import "./globals.css";
 
 export const metadata = {
   title: "Ares Sports",
   description: "Camisas de time",
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
