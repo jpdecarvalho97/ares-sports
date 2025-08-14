@@ -470,3 +470,35 @@ img { max-width: 100%; height: auto; display: block; }
   .container { margin-top: 0 !important; }
   .grid { position: static !important; }  /* evita overlay por position:absolute em algum tema */
 }
+/* === FIX MOBILE: banner não pode ficar atrás da grade === */
+
+/* 1) Garante que o banner participa do fluxo, sem posicionamento estranho */
+.hero,
+.hero picture,
+.hero img {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* 2) Dá um respiro abaixo do banner */
+@media (max-width: 768px){
+  .hero { margin: 0 0 16px !important; }
+}
+
+/* 3) Evita que a primeira .container/gride “suba” por margem negativa/absoluto */
+@media (max-width: 768px){
+  main.container:first-of-type,
+  .hero + .container,
+  .grid {
+    position: static !important;
+    margin-top: 0 !important;
+    z-index: 0 !important;
+  }
+}
+
+/* 4) Caso exista algum z-index antigo colocando a grade por cima */
+@media (max-width: 768px){
+  .hero { z-index: 1 !important; }
+}
