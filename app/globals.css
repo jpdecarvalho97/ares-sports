@@ -659,17 +659,59 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-desktop {
     display: none !important;
   }
-  .mobile-menu-button {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  /* Botão hamburger: ao lado da logo e visível no mobile */
+.mobile-menu-button {
+  display: none;
+  appearance: none;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
-@media (min-width: 901px) {
-  .mobile-menu-button,
-  .mobile-drawer,
-  .mobile-overlay {
-    display: none !important;
-  }
+.mobile-menu-button span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #111;
+  margin: 4px 0;
 }
+
+/* Mostrar no mobile, esconder no desktop */
+@media (max-width: 900px) {
+  .nav-desktop { display: none !important; }
+  .mobile-menu-button { display: inline-flex; }
+}
+
+/* Drawer e overlay (se ainda não tiver no arquivo) */
+.mobile-drawer {
+  position: fixed;
+  top: 0; right: -85%;
+  width: 85%;
+  height: 100dvh;
+  background: #fff;
+  box-shadow: -10px 0 30px rgba(0,0,0,.15);
+  z-index: 1001;
+  transition: right .25s ease;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-drawer.on { right: 0; }
+
+.mobile-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 1000;
+}
+
+.mobile-drawer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-bottom: 1px solid #eee;
+}
+.mobile-drawer-header .close {
+  appearance: none; border: 0; background: transparent;
+  font-size: 28px; line-height: 1; cursor: pointer;
+}
+.mobile-links { list-style: none; padding: 0; margin: 0; }
+.mobile-links li a { display: block; padding: 14px 16px; text-decoration: none; color: #111; font-weight: 600; }
+.mobile-links li a:hover { background: #f7f7f7; }
