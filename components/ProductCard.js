@@ -8,7 +8,7 @@ export default function ProductCard({ p }) {
 </Link>
 
       <div className="pad">
-        <div className="kicker">LANÇAMENTO</div>
+        <div className="kicker"></div>
         <h3 style={{ margin: "6px 0" }}>{p.name}</h3>
         <div className="price">
           <div className="now">R$ {p.price.toFixed(2)}</div>

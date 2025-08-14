@@ -213,3 +213,41 @@ img, video { max-width: 100%; height: auto; display: block; }
   margin: 3px 0;               /* espaço entre as barras */
   border-radius: 2px;
 }
+/* ===== Menu desktop estilizado ===== */
+.nav-desktop a{
+  display:inline-block;
+  text-decoration:none;
+  font-weight:700;
+  padding:10px 14px;
+  border-radius:999px;
+  border:2px solid transparent;
+  color:#111;
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .05s ease;
+}
+
+/* estado padrão (chip clarinho) */
+.nav-desktop a{
+  background:#fff;
+  border-color:#eee;
+}
+
+/* hover: vermelho Ares */
+.nav-desktop a:hover{
+  background:#d50000;
+  border-color:#d50000;
+  color:#fff;
+  transform: translateY(-1px);
+}
+
+/* foco via teclado: acessível */
+.nav-desktop a:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(213,0,0,.25);
+}
+
+/* estado "ativo" se quiser destacar página atual (adicione className="active" no Link) */
+.nav-desktop a.active{
+  background:#111;
+  border-color:#111;
+  color:#fff;
+}
