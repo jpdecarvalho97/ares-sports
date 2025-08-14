@@ -13,32 +13,35 @@ const HERO = {
   bgImage: false
 };
 
-export default function Home(){
+export default function Home() {
   return (
-    <CartProvider>
+    <>
       <Header />
-      <section className="hero"></section>
-<section className="hero">
-  <picture>
-    {/* Mobile */}
-    <source media="(max-width: 768px)" srcSet="/banner-mobile.jpg" />
-    {/* Desktop */}
-    <img src="/hero.jpg" alt="Ares Sports" />
-  </picture>
-</section>
 
+      {/* BANNER ÚNICO */}
+      <section className="hero">
+        <picture>
+          {/* Mobile */}
+          <source media="(max-width: 768px)" srcSet="/banner-mobile.jpg" />
+          {/* Desktop (sua imagem original perfeita) */}
+          <img src="/hero.jpg" alt="Ares Sports" />
+        </picture>
+      </section>
 
-
-      <main className="container" style={{padding:"24px 0"}}>
-        <div className="space" style={{marginBottom:12}}>
-          <h2>Lançamentos</h2>
+      <main className="container" style={{ padding: "24px 0" }}>
+        <div className="space" style={{ marginBottom: 12, display: "flex", alignItems: "baseline", gap: 12 }}>
+          <h2 style={{ margin: 0 }}>Lançamentos</h2>
           <a href="/c/brasileiros" className="small">Ver todos</a>
         </div>
+
         <div className="grid">
-          {products.map(p=> <ProductCard key={p.id} p={p} />)}
+          {products.map((p) => (
+            <ProductCard key={p.id} p={p} />
+          ))}
         </div>
       </main>
+
       <Footer />
-    </CartProvider>
-  )
+    </>
+  );
 }
