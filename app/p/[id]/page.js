@@ -1,87 +1,61 @@
 'use client'
+import { useState } from "react";
+import { useCart } from "@/lib/cart";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { products } from "@/lib/data";
-import { useCart } from "@/lib/cart";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 
-const SIZES = ["P","M","G","GG","XG","XGG"];
-
-export default function ProductPage({ params }){
-  const p = products.find(x=>x.id===params.id);
+export default function ProductPage({ params }) {
+  const product = products.find(p => p.id === params.id);
   const cart = useCart();
-  const router = useRouter();
   const [size, setSize] = useState("");
 
-  if(!p) return <div>Produto não encontrado.</div>;
-
-  function addToCart(){
-    if(!size){ alert("Escolha um tamanho."); return; }
-    cart.add(p.id, size);
+  if (!product) {
+    return <div>Produto não encontrado</div>;
   }
-  function buyNow(){
-    if(!size){ alert("Escolha um tamanho."); return; }
-    cart.add(p.id, size);
-    router.push("/carrinho");
+
+  function handleAdd() {
+    if (!size) {
+      alert("Por favor, selecione um tamanho antes de adicionar ao carrinho.");
+      return;
+    }
+    cart.add(product.id, size);
+    alert("Produto adicionado ao carrinho!");
   }
 
   return (
     <>
       <Header />
-      <main className="container" style={{padding:"24px 0"}}>
-        <div className="row row-2">
-          <div>
-            <img src={p.image} alt={p.name} style={{width:"100%", borderRadius:12, border:"1px solid #eee"}}/>
-          </div>
-          <div>
-            <div className="kicker">Lançamento</div>
-            <h1>{p.name}</h1>
-            <div className="price" style={{margin:"8px 0 16px"}}>
-              <div className="now">R$ {p.price.toFixed(2)}</div>
-              {p.oldPrice && <div className="old">R$ {p.oldPrice.toFixed(2)}</div>}
-            </div>
+      <main className="container" style={{ padding: "24px 0" }}>
+        <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
+          <img src={product.image} alt={product.name} style={{ maxWidth: "400px", width: "100%" }} />
+          <div style={{ flex: 1 }}>
+            <h1>{product.name}</h1>
+            <p>R$ {product.price.toFixed(2)}</p>
 
-            {/* Seletor de tamanho */}
-            <div style={{margin:"12px 0"}}>
-              <div className="small" style={{marginBottom:6}}>Tamanho</div>
-              <div style={{display:"flex", gap:8, flexWrap:"wrap"}}>
-                {SIZES.map(s=>(
-                  <button
-                    key={s}
-                    type="button"
-                    onClick={()=>setSize(s)}
-                    className="btn"
-                    style={{
-                      background: size===s ? "var(--red)" : "#fff",
-                      color: size===s ? "#fff" : "var(--black)",
-                      border: "2px solid var(--black)"
-                    }}
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-              {size==="" && <div className="small" style={{color:"#c00", marginTop:6}}>Selecione um tamanho.</div>}
-            </div>
+            <label htmlFor="size">Tamanho:</label>
+            <select
+              id="size"
+              value={size}
+              onChange={e => setSize(e.target.value)}
+              style={{ display: "block", marginBottom: "12px", padding: "8px" }}
+            >
+              <option value="">Selecione</option>
+              <option value="P">P</option>
+              <option value="M">M</option>
+              <option value="G">G</option>
+              <option value="GG">GG</option>
+              <option value="XG">XG</option>
+              <option value="XGG">XGG</option>
+            </select>
 
-            <div style={{display:"flex", gap:8, marginTop:10}}>
-              <button className="btn" onClick={addToCart}>Adicionar ao carrinho</button>
-              <button className="btn alt" onClick={buyNow}>Comprar agora</button>
-            </div>
-
-            <div style={{ marginTop: 16 }}>
-              <a className="btn gray" href="/guia-de-medidas">📏 Guia de medidas</a>
-            </div>
-
-            <div style={{marginTop:24}}>
-              <h3>Descrição</h3>
-              <p>Camisa de alta qualidade, tecido respirável e escudo bordado.</p>
-            </div>
+            <button onClick={handleAdd} className="btn btn-red">
+              Adicionar ao carrinho
+            </button>
           </div>
         </div>
       </main>
       <Footer />
     </>
-  )
+  );
 }

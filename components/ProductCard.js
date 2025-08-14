@@ -1,20 +1,6 @@
-'use client'
 import Link from "next/link";
-import { useCart } from "@/lib/cart";
-import { useState } from "react";
 
 export default function ProductCard({ p }) {
-  const cart = useCart();
-  const [added, setAdded] = useState(false);
-
-  function handleAdd() {
-    // usa o primeiro tamanho disponível (ajuste depois pra escolha do usuário)
-    const size = p.sizes?.[0] || "M";
-    cart.add(p.id, size);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1200);
-  }
-
   return (
     <div className="card">
       <div className="imgwrap">
@@ -29,15 +15,9 @@ export default function ProductCard({ p }) {
         </div>
 
         <div className="actions">
-          <Link href={`/p/${p.id}`} className="btn btn-dark">Ver detalhes</Link>
-          <button
-            type="button"
-            onClick={handleAdd}
-            className="btn btn-red"
-            aria-live="polite"
-          >
-            {added ? "Adicionado!" : "Adicionar ao carrinho"}
-          </button>
+          <Link href={`/p/${p.id}`} className="btn btn-dark">
+            Ver detalhes
+          </Link>
         </div>
       </div>
     </div>
