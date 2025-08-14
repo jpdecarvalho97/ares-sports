@@ -1,4 +1,3 @@
-// app/buscar/page.js
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
@@ -8,7 +7,7 @@ function norm(s = "") {
   return s
     .toString()
     .toLowerCase()
-    .normalize("NFD")                 // remove acentos
+    .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "");
 }
 
@@ -18,7 +17,8 @@ export const metadata = {
 };
 
 export default function BuscarPage({ searchParams }) {
-  const q = norm(searchParams?.q || "");
+  const qRaw = searchParams?.q || "";
+  const q = norm(qRaw);
   const results = q
     ? products.filter(p =>
         norm(p.name).includes(q) ||
@@ -31,15 +31,17 @@ export default function BuscarPage({ searchParams }) {
     <>
       <Header />
       <main className="container" style={{ padding: "24px 0" }}>
-        <h1>Resultados da busca</h1>
+        <h1 style={{ fontSize: "22px", marginBottom: 12 }}>
+          Resultados da busca
+        </h1>
 
-        <form action="/buscar" method="get" className="search" style={{ margin: "12px 0 20px" }}>
+        <form action="/buscar" method="get" className="search" style={{ margin: "10px 0 20px", maxWidth: 520 }}>
           <input
             className="input"
             type="search"
             name="q"
             placeholder="Ex.: Milan 24/25, Real Madrid, Brasil..."
-            defaultValue={searchParams?.q || ""}
+            defaultValue={qRaw}
           />
           <button className="btn" type="submit">Buscar</button>
         </form>
@@ -47,13 +49,13 @@ export default function BuscarPage({ searchParams }) {
         {!q && <p className="small">Digite o que procura no campo acima.</p>}
 
         {q && results.length === 0 && (
-          <p>Nenhum resultado para <strong>{searchParams.q}</strong>. Tente outra palavra.</p>
+          <p>Nenhum resultado para <strong>{qRaw}</strong>. Tente outra palavra.</p>
         )}
 
         {results.length > 0 && (
           <>
-            <p className="small" style={{ marginBottom: 12 }}>
-              {results.length} resultado(s) para <strong>{searchParams.q}</strong>
+            <p className="small" style={{ margin: "0 0 12px" }}>
+              {results.length} resultado(s) para <strong>{qRaw}</strong>
             </p>
             <div className="grid">
               {results.map(p => <ProductCard key={p.id} p={p} />)}
