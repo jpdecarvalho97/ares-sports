@@ -1,379 +1,46 @@
-:root{
-  --red:#E10600;
-  --black:#111111;
-  --white:#ffffff;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; color:var(--black); background:#fff;}
-a{color:inherit;text-decoration:none}
-.container{max-width:1200px;margin:0 auto;padding:0 16px}
-.header{border-bottom:1px solid #eee; position:sticky; top:0; background:#fff; z-index:10}
-.header .bar{display:flex; align-items:center; gap:16px; height:72px}
-.brand{font-weight:800; letter-spacing:.5px; font-size:1.25rem}
-.badge{display:inline-block; background:var(--red); color:#fff; padding:4px 8px; border-radius:6px; font-size:.75rem; font-weight:700}
-.nav{display:flex; gap:12px; flex-wrap:wrap}
-.nav a{padding:8px 10px; border-radius:6px}
-.nav a:hover{background:#f5f5f5}
-.hero{background:linear-gradient(90deg, var(--black), #6b0000); color:#fff; padding:40px 0}
-.hero h1{font-size:2rem; margin:0 0 12px}
-.hero p{opacity:.9; margin:0 0 16px}
-.cta{background:#fff; color:var(--black); font-weight:800; padding:10px 14px; border-radius:8px; display:inline-block}
-.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
-@media(min-width:800px){ .grid{grid-template-columns:repeat(4,1fr)}}
-.card{border:1px solid #eee; border-radius:12px; overflow:hidden; background:#fff}
-.card img{width:100%; height:220px; object-fit:cover; display:block; background:#fff; padding:8px}
-.card .pad{padding:12px}
-.price{display:flex; gap:8px; align-items:baseline}
-.price .old{color:#888; text-decoration:line-through; font-size:.9rem}
-.price .now{color:var(--red); font-weight:800; font-size:1.1rem}
-.footer{border-top:1px solid #eee; padding:24px 0; margin-top:40px; color:#555}
-.btn{display:inline-flex; align-items:center; justify-content:center; padding:10px 14px; border-radius:8px; background:var(--black); color:#fff; font-weight:700}
-.btn.alt{background:var(--red)}
-.table{width:100%; border-collapse:collapse}
-.table th,.table td{padding:10px 12px; border-bottom:1px solid #eee; text-align:left}
-.input{width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:8px}
-.row{display:grid; grid-template-columns:1fr; gap:12px}
-@media(min-width:700px){ .row-2{grid-template-columns:1fr 1fr} .row-3{grid-template-columns:repeat(3,1fr)} }
-.kicker{font-weight:800; color:var(--red); letter-spacing:.4px; text-transform:uppercase; font-size:.75rem}
-.flex{display:flex; gap:12px; align-items:center}
-.space{display:flex; justify-content:space-between; align-items:center}
-.small{font-size:.85rem; color:#666}
-.banner{display:flex; gap:10px; flex-wrap:wrap; margin:10px 0}
-.banner .pill{background:#111; color:#fff; padding:6px 10px; border-radius:999px; font-weight:700}
-.promo{background:#f9f9f9; border:1px dashed #ddd; padding:8px 12px;border-radius:8px}
-.qr{width:240px; height:240px; border:1px solid #eee; border-radius:12px; display:block}
-.card .imgwrap {
-  width: 100%;
-  aspect-ratio: 1 / 1;           /* deixa quadrado */
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-}
-
-.card .imgwrap img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-}
-.table-wrap { border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; }
-.table thead tr { background: #fafafa; }
-.table th { font-weight: 800; }
-.btn.outline {
-  background: transparent;
-  color: #555;
-  border: 2px solid #aaa;
-}
-.btn.outline:hover {
-  background: #444;
-  color: #fff;
-  border-color: #444;
-}
-/* Botão cinza discreto */
-.btn.gray {
-  background: transparent;
-  color: #555;
-  border: 2px solid #aaa;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-weight: 700;
-  text-decoration: none;
-}
-.btn.gray:hover {
-  background: #444;
-  color: #fff;
-  border-color: #444;
-}
-/* Barra de busca */
-.search {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  max-width: 520px;
-  width: 100%;
-}
-.search .input {
-  flex: 1;
-  height: 40px;
-}
-@media (max-width: 640px) {
-  header .search { max-width: 100%; }
-}
-/* Barra de pesquisa no Header */
-.search {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  max-width: 300px;
-  width: 100%;
-}
-
-.search .input {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.search button {
-  padding: 8px 12px;
-  border: none;
-  background: #d50000; /* vermelho principal */
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.search button:hover {
-  background: #b00000;
-}
-
-/* Responsivo para telas menores */
-@media (max-width: 768px) {
-  .header .container.bar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .search {
-    max-width: 100%;
-    margin: 10px 0;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-}
-/* Autocomplete da busca */
-.search.suggest { position: relative; }
-.suggest-box{
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 30;
-  width: 100%;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  margin-top: 6px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.07);
-  overflow: hidden;
-}
-.suggest-item{
-  display: grid;
-  grid-template-columns: 44px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  text-decoration: none;
-  color: inherit;
-  border-bottom: 1px solid #f3f3f3;
-}
-.suggest-item:last-child{ border-bottom: 0; }
-.suggest-item img{
-  width: 44px; height: 44px; object-fit: cover; border-radius: 6px; border:1px solid #eee;
-}
-.suggest-item em{ font-style: normal; opacity: .8; }
-.suggest-item.hi{ background: #fafafa; }
-
-.suggest-item.all{
-  grid-template-columns: 1fr;
-  text-align: center;
-  font-weight: 700;
-}
-/* Hero/banner - somente imagem */
-.hero {
-  background: url("/hero.jpg") center center / cover no-repeat;
-  height: 45vh;         /* ocupa 45% da altura da tela */
-  min-height: 400px;    /* garante altura mínima */
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-/* ===== Resetzinho útil p/ mobile ===== */
-html, body { max-width: 100%; overflow-x: hidden; }
-img, video { max-width: 100%; height: auto; display: block; }
+/* ===== Reset básico e container ===== */
 * { box-sizing: border-box; }
-:root { --container-pad: 16px; }
+html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: hidden; }
+img, video { max-width: 100%; height: auto; display: block; }
 
-/* Container padrão */
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: var(--container-pad);
-  padding-right: var(--container-pad);
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-/* Header: alinhar e quebrar bem no mobile */
+/* ===== Header / topo ===== */
 .header .container.bar {
   display: flex;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;           /* permite quebrar linha */
+  flex-wrap: wrap; /* permite quebrar linha no mobile */
 }
 
-.header .nav {
+.nav-desktop {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;           /* não deixa estourar a tela */
+  gap: 15px;
 }
 
-/* Busca ocupa toda a linha no mobile */
-@media (max-width: 768px) {
-  .header .container.bar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .header .search { width: 100%; }
-  .header .nav { justify-content: center; }
-}
+/* Busca */
+.search { display: flex; gap: 8px; width: 100%; }
+.search .input { flex: 1; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; }
+.search button { padding: 8px 12px; border: none; background: #d50000; color: #fff; border-radius: 6px; cursor: pointer; }
+.search button:hover { background: #b00000; }
 
-/* Grid de produtos responsivo (sem colunas fixas) */
+/* ===== Banner (picture/img) ===== */
+.hero { margin: 0; padding: 0; position: relative; z-index: 0; }
+.hero picture, .hero img { display: block; width: 100%; height: auto; }
+
+/* ===== Grid e cards ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 16px;
 }
 
-/* Cards: imagem responsiva sem distorcer */
-.card .imgwrap { 
-  position: relative; 
-  width: 100%; 
-  aspect-ratio: 1 / 1;      /* quadradinho bonito. Ajuste se quiser 4/5 */
-  overflow: hidden; 
-  border-radius: 10px;
-  border: 1px solid #eee;
-}
-.card .imgwrap img { 
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-}
-
-/* Botões e inputs amigáveis no mobile */
-.input { width: 100%; }
-.btn { white-space: nowrap; }
-@media (max-width: 480px) {
-  .row.row-2, .row.row-3 { display: block; }  /* evita colunas apertadas demais */
-  .btn { width: 100%; text-align: center; }   /* botões grandes e fáceis de tocar */
-}
-
-/* Banner hero: imagem pura e altura boa no celular */
-.hero {
-  background: url("/hero.jpg") center center / cover no-repeat;
-  /* use unidades seguras p/ mobile: */
-  height: clamp(360px, 60vh, 700px);  /* 60% da tela, min 360px, máx 700px */
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-/* Correção: botões lado a lado com espaçamento */
-.card .actions {
-  display: flex;
-  gap: 8px;              /* espaço entre eles */
-  flex-wrap: wrap;       /* se precisar, quebra linha no mobile */
-}
-
-.card .actions .btn {
-  flex: 1;               /* cada botão ocupa metade do espaço */
-  min-width: 100px;      /* evita botão muito estreito */
-}
-.card .actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.card .actions .btn {
-  flex: 1;
-  min-width: 100px;
-  text-align: center;
-}
-.card .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-.card .actions .btn { flex: 1; min-width: 100px; text-align: center; }
-/* Não force caixa nas labels dos botões */
-.btn { text-transform: none; }
-/* ===== Produto: imagem ===== */
-.prod-figure {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 5;         /* ajuste se preferir 1/1 */
-  overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  background: #fff;
-}
-.prod-figure img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-
-/* ===== Chips de tamanho ===== */
-.size-group { margin: 10px 0 0; }
-.size-label { font-weight: 700; margin-bottom: 8px; }
-.size-grid {
-  display: flex; flex-wrap: wrap; gap: 8px;
-}
-.size-chip {
-  appearance: none;
-  border: 1px solid #ddd;
-  border-radius: 999px;
-  padding: 10px 14px;
-  background: #fff;
-  font-weight: 700;
-  cursor: pointer;
-}
-.size-chip:hover { border-color: #bbb; }
-.size-chip.on {
-  border-color: #111;
-  background: #111;
-  color: #fff;
-}
-/* Container e resetzinhos úteis */
-html, body { max-width: 100%; overflow-x: hidden; }
-img { max-width: 100%; height: auto; display: block; }
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-
-/* Grid responsiva usada em listagens e na /buscar */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 16px;
-}
-
-/* Card básico (garante imagem e textos em tamanho ok) */
-.card .imgwrap { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 10px; border: 1px solid #eee; }
-.card .imgwrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.card h3 { font-size: 16px; line-height: 1.3; }
-
-/* Ações dos cards */
-.card .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-.card .actions .btn { flex: 1; min-width: 120px; text-align: center; }
-/* Corrige tamanho das imagens em cards */
-.card .imgwrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid #eee;
-}
-.card .imgwrap img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/* Mantém todos os cards com a mesma altura e botões alinhados */
 .card {
   display: flex;
   flex-direction: column;
@@ -381,135 +48,33 @@ img { max-width: 100%; height: auto; display: block; }
   height: 100%;
 }
 
-.card .pad {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+.imgwrap { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 10px; border: 1px solid #eee; cursor: pointer; }
+.imgwrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-.card .price {
-  margin-bottom: auto; /* empurra botões para o final */
-}
+.card .pad { flex: 1; display: flex; flex-direction: column; }
+.card h3 { font-size: 16px; line-height: 1.3; margin: 6px 0; }
 
-.card .actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-.card .actions .btn {
-  flex: 1;
-  min-width: 120px;
-  text-align: center;
-}
-/* imagem clicável */
-.imgwrap { cursor: pointer; }
-/* --- Banner responsivo (corrige zoom no mobile) --- */
-.hero {
-  background: url("/hero.jpg") center center / cover no-repeat;
-  height: 60vh;
-  min-height: 420px;
-  margin: 0;
-  padding: 0;
-}
+.price { display: flex; align-items: baseline; gap: 8px; margin-bottom: auto; }
+.price .now { font-weight: 800; }
+.price .old { text-decoration: line-through; opacity: .6; }
 
-/* celulares grandes */
-@media (max-width: 768px) {
-  .hero {
-    height: 42svh;
-    min-height: 280px;
-    background-position: center top;
-  }
-}
+.card .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.card .actions .btn { flex: 1; min-width: 120px; text-align: center; }
 
-/* celulares pequenos */
-@media (max-width: 480px) {
-  .hero {
-    height: 38svh;
-    min-height: 220px;
-    background-position: center 20%;
-  }
-}
+/* Botões genéricos */
+.btn { text-decoration: none; padding: 10px 12px; border-radius: 8px; border: 1px solid #111; background: #111; color: #fff; display: inline-block; text-transform: none; }
+.btn.btn-dark { background: #111; color: #fff; border-color: #111; }
+.btn.btn-red { background: #d50000; border-color: #d50000; }
+.btn:hover { filter: brightness(.95); }
 
-/* Imagem clicável */
-.imgwrap {
-  cursor: pointer;
-}
-.hero {
-  margin: 0;
-  padding: 0;
-}
+/* ===== MENU MOBILE (hamburger + drawer) ===== */
 
-.hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-/* Banner: garante fluxo normal e sem sobreposição */
-.hero { 
-  position: relative;     /* cria contexto, evita z-index negativo herdado */
-  z-index: 0; 
-  margin: 0; 
-  padding: 0; 
-}
-
-.hero picture,
-.hero img {
-  display: block;         /* ocupa a linha toda */
-  width: 100%;
-  height: auto;
-}
-
-/* Dá um espaço entre o banner e a seção de produtos */
-.hero + .container {
-  margin-top: 16px;
-}
-
-/* Se algum layout antigo estiver empurrando pra cima, neutraliza: */
-@media (max-width: 768px) {
-  .container { margin-top: 0 !important; }
-  .grid { position: static !important; }  /* evita overlay por position:absolute em algum tema */
-}
-/* === FIX MOBILE: banner não pode ficar atrás da grade === */
-
-/* 1) Garante que o banner participa do fluxo, sem posicionamento estranho */
-.hero,
-.hero picture,
-.hero img {
-  position: static !important;
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-}
-
-/* 2) Dá um respiro abaixo do banner */
-@media (max-width: 768px){
-  .hero { margin: 0 0 16px !important; }
-}
-
-/* 3) Evita que a primeira .container/gride “suba” por margem negativa/absoluto */
-@media (max-width: 768px){
-  main.container:first-of-type,
-  .hero + .container,
-  .grid {
-    position: static !important;
-    margin-top: 0 !important;
-    z-index: 0 !important;
-  }
-}
-
-/* 4) Caso exista algum z-index antigo colocando a grade por cima */
-@media (max-width: 768px){
-  .hero { z-index: 1 !important; }
-}
-/* ====== MENU MOBILE ====== */
-
-/* botão hamburger (escondido no desktop) */
+/* Botão hamburger (fica ao lado da logo; escondido no desktop) */
 .mobile-menu-button {
   display: none;
   appearance: none;
-  border: 0;
-  background: transparent;
+  border: 1px solid #ddd;
+  background: #fff;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
@@ -519,79 +84,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: 22px;
   height: 2px;
   background: #111;
-  margin: 5px 0;
-  transition: transform .2s ease, opacity .2s ease;
-}
-
-/* Drawer */
-.mobile-drawer {
-  position: fixed;
-  top: 0; right: -85%;
-  width: 85%;
-  height: 100dvh;
-  background: #fff;
-  box-shadow: -10px 0 30px rgba(0,0,0,.15);
-  z-index: 1001;
-  transition: right .25s ease;
-  display: flex;
-  flex-direction: column;
-}
-.mobile-drawer.on { right: 0; }
-
-.mobile-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.35);
-  z-index: 1000;
-}
-
-/* Cabeçalho do drawer */
-.mobile-drawer-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; border-bottom: 1px solid #eee;
-}
-.mobile-drawer-header .close {
-  appearance: none; border: 0; background: transparent;
-  font-size: 28px; line-height: 1; cursor: pointer;
-}
-
-/* Links do menu */
-.mobile-links { list-style: none; padding: 8px 0; margin: 0; }
-.mobile-links li a {
-  display: block;
-  padding: 14px 16px;
-  text-decoration: none;
-  color: #111;
-  font-weight: 700;
-}
-.mobile-links li a:hover { background: #f7f7f7; }
-
-/* Comportamento: desktop x mobile */
-@media (max-width: 900px) {
-  .nav-desktop { display: none !important; }       /* esconde menu tradicional */
-  .mobile-menu-button { display: inline-flex; }     /* mostra botão hamburger */
-}
-@media (min-width: 901px) {
-  .mobile-menu-button { display: none !important; }
-  .mobile-drawer, .mobile-overlay { display: none !important; }
-}
-/* ===== MENU MOBILE ===== */
-
-/* Botão hamburger */
-.mobile-menu-button {
-  display: none;
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 8px;
-  cursor: pointer;
-}
-.mobile-menu-button span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #111;
-  margin: 5px 0;
-  transition: transform .2s ease, opacity .2s ease;
+  margin: 4px 0;
 }
 
 /* Gaveta lateral */
@@ -608,11 +101,9 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   flex-direction: column;
 }
-.mobile-drawer.on {
-  right: 0;
-}
+.mobile-drawer.on { right: 0; }
 
-/* Fundo escurecido */
+/* Fundo escurecido quando aberto */
 .mobile-overlay {
   position: fixed;
   inset: 0;
@@ -637,12 +128,8 @@ img { max-width: 100%; height: auto; display: block; }
   cursor: pointer;
 }
 
-/* Links */
-.mobile-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+/* Links do drawer */
+.mobile-links { list-style: none; padding: 0; margin: 0; }
 .mobile-links li a {
   display: block;
   padding: 14px 16px;
@@ -650,124 +137,27 @@ img { max-width: 100%; height: auto; display: block; }
   color: #111;
   font-weight: 600;
 }
-.mobile-links li a:hover {
-  background: #f7f7f7;
-}
+.mobile-links li a:hover { background: #f7f7f7; }
 
-/* Mostrar no mobile, esconder no desktop */
+/* ===== Responsivo ===== */
+
+/* Mobile: esconde menu desktop, mostra hamburger, corrige banner e espaçamentos */
 @media (max-width: 900px) {
-  .nav-desktop {
-    display: none !important;
+  .nav-desktop { display: none !important; }
+  .mobile-menu-button { display: inline-flex; }
+
+  .header .container.bar {
+    flex-direction: column;
+    align-items: stretch;
   }
-  /* Botão hamburger: ao lado da logo e visível no mobile */
-.mobile-menu-button {
-  display: none;
-  appearance: none;
-  border: 1px solid #ddd;
-  background: #fff;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.mobile-menu-button span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #111;
-  margin: 4px 0;
+
+  .search { width: 100%; }
+
+  /* Respiro entre banner e os produtos */
+  .hero + .container { margin-top: 16px; }
 }
 
-/* Mostrar no mobile, esconder no desktop */
-@media (max-width: 900px) {
-  .nav-desktop { display: none !important; }
-  .mobile-menu-button { display: inline-flex; }
+/* Telefones menores */
+@media (max-width: 480px) {
+  .btn { width: 100%; text-align: center; }
 }
-
-/* Drawer e overlay (se ainda não tiver no arquivo) */
-.mobile-drawer {
-  position: fixed;
-  top: 0; right: -85%;
-  width: 85%;
-  height: 100dvh;
-  background: #fff;
-  box-shadow: -10px 0 30px rgba(0,0,0,.15);
-  z-index: 1001;
-  transition: right .25s ease;
-  display: flex;
-  flex-direction: column;
-}
-.mobile-drawer.on { right: 0; }
-
-.mobile-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.35);
-  z-index: 1000;
-}
-
-.mobile-drawer-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; border-bottom: 1px solid #eee;
-}
-.mobile-drawer-header .close {
-  appearance: none; border: 0; background: transparent;
-  font-size: 28px; line-height: 1; cursor: pointer;
-}
-.mobile-links { list-style: none; padding: 0; margin: 0; }
-.mobile-links li a { display: block; padding: 14px 16px; text-decoration: none; color: #111; font-weight: 600; }
-.mobile-links li a:hover { background: #f7f7f7; }
-/* Botão hamburger: ao lado da logo e visível no mobile */
-.mobile-menu-button {
-  display: none;
-  appearance: none;
-  border: 1px solid #ddd;
-  background: #fff;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.mobile-menu-button span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #111;
-  margin: 4px 0;
-}
-
-/* Mostrar no mobile, esconder no desktop */
-@media (max-width: 900px) {
-  .nav-desktop { display: none !important; }
-  .mobile-menu-button { display: inline-flex; }
-}
-
-/* Drawer e overlay (se ainda não tiver no arquivo) */
-.mobile-drawer {
-  position: fixed;
-  top: 0; right: -85%;
-  width: 85%;
-  height: 100dvh;
-  background: #fff;
-  box-shadow: -10px 0 30px rgba(0,0,0,.15);
-  z-index: 1001;
-  transition: right .25s ease;
-  display: flex;
-  flex-direction: column;
-}
-.mobile-drawer.on { right: 0; }
-
-.mobile-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.35);
-  z-index: 1000;
-}
-
-.mobile-drawer-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; border-bottom: 1px solid #eee;
-}
-.mobile-drawer-header .close {
-  appearance: none; border: 0; background: transparent;
-  font-size: 28px; line-height: 1; cursor: pointer;
-}
-.mobile-links { list-style: none; padding: 0; margin: 0; }
-.mobile-links li a { display: block; padding: 14px 16px; text-decoration: none; color: #111; font-weight: 600; }
-.mobile-links li a:hover { background: #f7f7f7; }
