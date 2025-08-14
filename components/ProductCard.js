@@ -3,8 +3,6 @@ import Link from "next/link";
 export default function ProductCard({ p }) {
   return (
     <div className="card">
-      import Link from "next/link"; // garante que tenha esse import no topo
-
 <Link href={`/p/${p.id}`} className="imgwrap">
   <img src={p.image} alt={p.name} loading="lazy" />
 </Link>
