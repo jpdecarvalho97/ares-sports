@@ -6,17 +6,13 @@ export const metadata = {
   description: "Camisas de time",
 };
 
-export const viewport = {
-  width: "device-width",
-  initialScale: 1 };
+export const viewport = { width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body>
-        <CartProvider>
-          {children}
-        </CartProvider>
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );
