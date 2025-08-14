@@ -161,3 +161,40 @@ img, video { max-width: 100%; height: auto; display: block; }
 @media (max-width: 480px) {
   .btn { width: 100%; text-align: center; }
 }
+/* === Layout do header no mobile: botão no canto e logo central === */
+@media (max-width: 900px) {
+  .header .container.bar {
+    position: relative;        /* permite posicionar filhos absolutos */
+    justify-content: center;   /* centraliza a logo */
+    padding: 12px 0;
+  }
+
+  /* Botão hamburger no canto esquerdo */
+  .mobile-menu-button {
+    display: inline-flex;
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 6px;
+    cursor: pointer;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* fica por cima de tudo */
+  }
+
+  .mobile-menu-button span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #111;
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+
+  /* Centraliza a logo */
+  .header .container.bar a[href="/"] {
+    margin: 0 auto;
+  }
+}
