@@ -404,3 +404,41 @@ img { max-width: 100%; height: auto; display: block; }
 }
 /* imagem clicável */
 .imgwrap { cursor: pointer; }
+/* --- Banner responsivo (corrige zoom no mobile) --- */
+.hero{
+  background: url("/hero.jpg") center center / cover no-repeat;
+  /* desktop / tablets */
+  height: 60vh;
+  min-height: 420px;
+  margin: 0; padding: 0;
+}
+
+/* celulares grandes */
+@media (max-width: 768px){
+  .hero{
+    height: 42svh;        /* usa viewport seguro em mobile */
+    min-height: 280px;
+    background-position: center top; /* mostra mais do topo da foto */
+  }
+}
+
+/* celulares pequenos */
+@media (max-width: 480px){
+  .hero{
+    height: 38svh;
+    min-height: 220px;
+    background-position: center 20%; /* sobe um pouco o enquadramento */
+  }
+}
+
+/* OPCIONAL: se ainda parecer muito “cortado” no celular,
+   troque para "contain" só no mobile.
+   Isso evita zoom, mas pode sobrar faixa vazia nas laterais.
+@media (max-width: 480px){
+  .hero{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #000; /* cor de fundo atrás da foto */
+  }
+}
+*/
