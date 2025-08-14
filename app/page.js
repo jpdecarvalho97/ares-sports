@@ -18,6 +18,14 @@ export default function Home(){
     <CartProvider>
       <Header />
       <section className="hero"></section>
+<section className="hero">
+  <picture>
+    {/* mobile primeiro */}
+    <source media="(max-width: 768px)" srcSet="/banner-mobile.jpg" />
+    {/* desktop */}
+    <img src="/banner-desktop.jpg" alt="Ares Sports" />
+  </picture>
+</section>
 
 
       <main className="container" style={{padding:"24px 0"}}>
@@ -33,4 +41,3 @@ export default function Home(){
     </CartProvider>
   )
 }
-
