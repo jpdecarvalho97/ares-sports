@@ -445,3 +445,28 @@ img { max-width: 100%; height: auto; display: block; }
   width: 100%;
   height: auto;
 }
+/* Banner: garante fluxo normal e sem sobreposição */
+.hero { 
+  position: relative;     /* cria contexto, evita z-index negativo herdado */
+  z-index: 0; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.hero picture,
+.hero img {
+  display: block;         /* ocupa a linha toda */
+  width: 100%;
+  height: auto;
+}
+
+/* Dá um espaço entre o banner e a seção de produtos */
+.hero + .container {
+  margin-top: 16px;
+}
+
+/* Se algum layout antigo estiver empurrando pra cima, neutraliza: */
+@media (max-width: 768px) {
+  .container { margin-top: 0 !important; }
+  .grid { position: static !important; }  /* evita overlay por position:absolute em algum tema */
+}
