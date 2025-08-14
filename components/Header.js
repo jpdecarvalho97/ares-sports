@@ -7,7 +7,7 @@ export default function Header() {
       <div className="container bar" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
         {/* Logo */}
         <Link href="/" aria-label="Ares Sports - Início">
-          <img src="/logo.png" alt="Ares Sports" style={{ height: "90px" }} />
+          <img src="/logo.png" alt="Ares Sports" style={{ height: "80px", marginTop: "-10px" }} />
         </Link>
 
         {/* Barra de pesquisa */}
