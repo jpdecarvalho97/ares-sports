@@ -1,5 +1,6 @@
-import Link from "next/link";
-import CartBadge from "@/components/CartBadge";
+-import Link from "next/link";
++import Link from "next/link";
++import MobileMenu from "@/components/MobileMenu";
 
 export default function Header() {
   return (
@@ -7,23 +8,19 @@ export default function Header() {
       <div className="container bar" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
         {/* Logo */}
         <Link href="/" aria-label="Ares Sports - Início">
-          <img src="/logo.png" alt="Ares Sports" style={{ height: "80px", marginTop: "-10px" }} />
+          <img src="/logo.png" alt="Ares Sports" style={{ height: "80px", marginTop: "-8px" }} />
         </Link>
 
-        {/* Barra de pesquisa */}
+        {/* Busca */}
         <form action="/buscar" method="get" className="search" style={{ flex: 1 }}>
-          <input
-            className="input"
-            type="search"
-            name="q"
-            placeholder="Buscar camisas..."
-            aria-label="Buscar"
-          />
+          <input className="input" type="search" name="q" placeholder="Buscar camisas..." aria-label="Buscar" />
           <button type="submit">Buscar</button>
         </form>
 
-        {/* Menu */}
-        <nav className="nav" aria-label="Categorias" style={{ display: "flex", gap: "15px" }}>
+-       {/* Menu (antes) */}
+-       <nav className="nav" aria-label="Categorias" style={{ display: "flex", gap: "15px" }}>
++       {/* Menu DESKTOP */}
++       <nav className="nav nav-desktop" aria-label="Categorias" style={{ display: "flex", gap: "15px" }}>
           <Link href="/c/brasileiros">Brasileiros</Link>
           <Link href="/c/internacionais">Internacionais</Link>
           <Link href="/c/selecoes">Seleções</Link>
@@ -32,8 +29,8 @@ export default function Header() {
           <Link href="/guia-de-medidas">Guia de Medidas</Link>
         </nav>
 
-        {/* Carrinho */}
-        <CartBadge />
++       {/* Menu MOBILE (botão + gaveta) */}
++       <MobileMenu />
       </div>
     </header>
   );
