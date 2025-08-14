@@ -1,39 +1,43 @@
-'use client'
+'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
 
-  // fecha com ESC
+  // Fecha o menu com a tecla ESC
   useEffect(() => {
-    function onKey(e){ if(e.key === "Escape") setOpen(false); }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  },[]);
+    function handleKey(e) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
 
   return (
     <>
-      {/* Botão hamburger (aparece só no mobile via CSS) */}
+      {/* Botão hamburger - aparece apenas no mobile */}
       <button
         className="mobile-menu-button"
         aria-label={open ? "Fechar menu" : "Abrir menu"}
         aria-expanded={open}
-        onClick={() => setOpen(v => !v)}
+        onClick={() => setOpen((prev) => !prev)}
       >
         <span />
         <span />
         <span />
       </button>
 
-      {/* Overlay */}
+      {/* Fundo escuro quando menu aberto */}
       {open && <div className="mobile-overlay" onClick={() => setOpen(false)} />}
 
-      {/* Drawer */}
+      {/* Gaveta lateral */}
       <nav className={`mobile-drawer ${open ? "on" : ""}`} aria-label="Menu mobile">
         <div className="mobile-drawer-header">
           <strong>Ares Sports</strong>
-          <button className="close" aria-label="Fechar" onClick={() => setOpen(false)}>×</button>
+          <button className="close" aria-label="Fechar" onClick={() => setOpen(false)}>
+            ×
+          </button>
         </div>
 
         <ul className="mobile-links" onClick={() => setOpen(false)}>
