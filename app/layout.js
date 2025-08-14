@@ -1,3 +1,5 @@
+import "./globals.css"; // <- IMPORTANTE: carrega seu CSS global
+
 export const metadata = {
   title: "Ares Sports",
   description: "Camisas de time",
