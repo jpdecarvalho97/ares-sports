@@ -274,3 +274,25 @@ img, video { max-width: 100%; height: auto; display: block; }
   margin: 0;
   padding: 0;
 }
+/* Correção: botões lado a lado com espaçamento */
+.card .actions {
+  display: flex;
+  gap: 8px;              /* espaço entre eles */
+  flex-wrap: wrap;       /* se precisar, quebra linha no mobile */
+}
+
+.card .actions .btn {
+  flex: 1;               /* cada botão ocupa metade do espaço */
+  min-width: 100px;      /* evita botão muito estreito */
+}
+.card .actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.card .actions .btn {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+}
