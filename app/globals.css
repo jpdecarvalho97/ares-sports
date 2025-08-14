@@ -298,3 +298,5 @@ img, video { max-width: 100%; height: auto; display: block; }
 }
 .card .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 .card .actions .btn { flex: 1; min-width: 100px; text-align: center; }
+/* Não force caixa nas labels dos botões */
+.btn { text-transform: none; }

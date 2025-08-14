@@ -34,7 +34,24 @@ export default function Header({ cartCount = 0 }) {
         {/* Carrinho */}
         <Link href="/carrinho" className="btn">
           Carrinho ({cartCount})
-        </Link>
+        </-import Link from "next/link";
++import Link from "next/link";
++import CartBadge from "@/components/CartBadge";
+
+export default function Header({ cartCount = 0 }) {
+  return (
+    <header className="header">
+      <div className="container bar" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        ...
+-       <Link href="/carrinho" className="btn">
+-         Carrinho ({cartCount})
+-       </Link>
++       <CartBadge />
+      </div>
+    </header>
+  );
+}
+>
       </div>
     </header>
   );

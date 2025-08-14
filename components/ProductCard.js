@@ -1,13 +1,18 @@
 'use client'
 import Link from "next/link";
 import { useCart } from "@/lib/cart";
+import { useState } from "react";
 
 export default function ProductCard({ p }) {
   const cart = useCart();
+  const [added, setAdded] = useState(false);
 
   function handleAdd() {
-    // se você exige tamanho, troque 'M' por sua lógica de escolha
-    cart.add(p.id, p.sizes?.[0] || "M");
+    // usa o primeiro tamanho disponível (ajuste depois pra escolha do usuário)
+    const size = p.sizes?.[0] || "M";
+    cart.add(p.id, size);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1200);
   }
 
   return (
@@ -25,7 +30,14 @@ export default function ProductCard({ p }) {
 
         <div className="actions">
           <Link href={`/p/${p.id}`} className="btn btn-dark">Ver detalhes</Link>
-          <button onClick={handleAdd} className="btn btn-red">Adicionar</button>
+          <button
+            type="button"
+            onClick={handleAdd}
+            className="btn btn-red"
+            aria-live="polite"
+          >
+            {added ? "Adicionado!" : "Adicionar ao carrinho"}
+          </button>
         </div>
       </div>
     </div>
