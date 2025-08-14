@@ -26,6 +26,3 @@ export default function ProductCard({ p }) {
     </div>
   );
 }
-.imgwrap {
-  cursor: pointer;
-}
