@@ -1,6 +1,5 @@
--import Link from "next/link";
-+import Link from "next/link";
-+import MobileMenu from "@/components/MobileMenu";
+import Link from "next/link";
+import MobileMenu from "@/components/MobileMenu";
 
 export default function Header() {
   return (
