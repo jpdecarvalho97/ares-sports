@@ -198,3 +198,18 @@ img, video { max-width: 100%; height: auto; display: block; }
     margin: 0 auto;
   }
 }
+/* Corrige alinhamento das barras do botão hamburger */
+.mobile-menu-button {
+  flex-direction: column;      /* barras uma embaixo da outra */
+  justify-content: center;     /* centraliza verticalmente */
+  align-items: center;         /* centraliza horizontalmente */
+}
+
+.mobile-menu-button span {
+  display: block;              /* garante que cada barra ocupa a linha toda */
+  width: 20px;
+  height: 2px;
+  background: #111;
+  margin: 3px 0;               /* espaço entre as barras */
+  border-radius: 2px;
+}
