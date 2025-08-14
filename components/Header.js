@@ -1,6 +1,7 @@
 import Link from "next/link";
+import CartBadge from "@/components/CartBadge";
 
-export default function Header({ cartCount = 0 }) {
+export default function Header() {
   return (
     <header className="header">
       <div className="container bar" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
@@ -9,7 +10,7 @@ export default function Header({ cartCount = 0 }) {
           <img src="/logo.png" alt="Ares Sports" style={{ height: "90px" }} />
         </Link>
 
-        {/* Barra de pesquisa (DENTRO do componente) */}
+        {/* Barra de pesquisa */}
         <form action="/buscar" method="get" className="search" style={{ flex: 1 }}>
           <input
             className="input"
@@ -32,26 +33,7 @@ export default function Header({ cartCount = 0 }) {
         </nav>
 
         {/* Carrinho */}
-        <Link href="/carrinho" className="btn">
-          Carrinho ({cartCount})
-        </-import Link from "next/link";
-+import Link from "next/link";
-+import CartBadge from "@/components/CartBadge";
-
-export default function Header({ cartCount = 0 }) {
-  return (
-    <header className="header">
-      <div className="container bar" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-        ...
--       <Link href="/carrinho" className="btn">
--         Carrinho ({cartCount})
--       </Link>
-+       <CartBadge />
-      </div>
-    </header>
-  );
-}
->
+        <CartBadge />
       </div>
     </header>
   );
