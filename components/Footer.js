@@ -9,6 +9,14 @@ export default function Footer(){
         <div className="small">
           Pagamento por PIX • Envio para todo Brasil
         </div>
+<a
+          href="https://www.instagram.com/aressportsoficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#E4405F", fontWeight: "bold", textDecoration: "none" }}
+        >
+          📸 Siga no Instagram
+        </a>
       </div>
     </footer>
   )
