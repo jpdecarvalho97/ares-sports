@@ -258,3 +258,48 @@ img, video { max-width: 100%; height: auto; display: block; }
 @media (max-width: 900px) {
   .cart-desktop { display: none !important; }
 }
+/* Header base */
+.header .container.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;     /* permite posicionar o hamburger absoluto */
+}
+
+/* Grupo esquerdo */
+.brand { display: flex; align-items: center; gap: 8px; }
+
+/* Grupo direito: menu + carrinho (desktop) */
+.navwrap { display: flex; align-items: center; gap: 12px; }
+.navwrap .nav-desktop { display: flex; gap: 15px; }
+
+/* Botão hamburger (fica no canto esquerdo no mobile) */
+@media (max-width: 900px) {
+  .navwrap { display: none; }             /* esconde menu+carrinho no topo (estão no drawer) */
+
+  .mobile-menu-button {
+    display: inline-flex !important;
+    position: absolute !important;
+    left: 12px; top: 50%;
+    transform: translateY(-50%);
+    padding: 6px;
+    border: none; background: transparent;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-menu-button span {
+    display: block;
+    width: 20px; height: 2px; margin: 3px 0;
+    background: #111; border-radius: 2px;
+  }
+
+  /* Centraliza a logo visualmente no mobile */
+  .brand { justify-content: center; width: 100%; }
+}
+
+/* Desktop: mostra menu + carrinho */
+@media (min-width: 901px) {
+  .mobile-drawer, .mobile-overlay { display: none !important; }
+}
