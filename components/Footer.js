@@ -2,27 +2,30 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Logo / Nome */}
+        {/* ESQUERDA — Logo + copyright */}
         <div className="footer-brand">
           <img src="/logo.png" alt="Ares Sports" className="footer-logo" />
           <p>© {new Date().getFullYear()} Ares Sports</p>
         </div>
 
-        {/* Links úteis */}
-        <div className="footer-links">
+        {/* MEIO — Links úteis */}
+        <nav className="footer-links" aria-label="Links do rodapé">
           <a href="/guia-de-medidas">Guia de Medidas</a>
           <a href="/c/contato">Contato</a>
-        </div>
+          <a href="/c/politica-de-troca">Política de Troca</a>
+        </nav>
 
-        {/* Redes sociais */}
+        {/* DIREITA — Instagram (ícone + texto) */}
         <div className="footer-social">
           <a
-            href="https://www.instagram.com/aressportsoficial"
+            href="https://www.instagram.com/aressportsoficial"   // 
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
+            className="instagram-link"
+            aria-label="Instagram da Ares Sports"
           >
-            <img src="/icons/instagram.jpg" alt="Instagram" />
+            <img src="/icons/instagram.svg" alt="" aria-hidden="true" />
+            <span>Instagram</span>
           </a>
         </div>
       </div>
