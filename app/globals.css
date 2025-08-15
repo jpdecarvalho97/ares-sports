@@ -303,3 +303,61 @@ img, video { max-width: 100%; height: auto; display: block; }
 @media (min-width: 901px) {
   .mobile-drawer, .mobile-overlay { display: none !important; }
 }
+/* ====== HEADER DESKTOP REFINADO ====== */
+.header { background:#fff; position: sticky; top:0; z-index: 50; }
+.header .container.bar{
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* logo | busca | menu+cart */
+  align-items: center;
+  gap: 16px;
+  height: 88px;               /* altura fixa elegante */
+  padding: 8px 0;
+}
+
+/* Logo menor para equilibrar a faixa */
+.header .container.bar img[alt="Ares Sports"]{ height:56px; margin-top:0; }
+
+/* Busca compacta */
+.header .search{ display:flex; gap:8px; align-items:center; }
+.header .search .input{
+  height:40px; padding:0 12px; border:1px solid #dcdcdc; border-radius:10px;
+  font-size:14px;
+}
+.header .search button{
+  height:40px; padding:0 14px; border-radius:10px; font-weight:700;
+  background:#d50000; color:#fff; border:0;
+}
+.header .search button:hover{ filter:brightness(.92); }
+
+/* Menu + Carrinho à direita, mesma linha */
+.navwrap{ display:flex; align-items:center; gap:10px; }
+
+/* “Chips” bonitos para o menu */
+.nav-desktop{ display:flex; gap:10px; }
+.nav-desktop a{
+  display:inline-block; padding:10px 14px; border-radius:999px;
+  background:#f7f7f7; border:1px solid #e9e9e9; color:#111; text-decoration:none;
+  font-weight:700; font-size:14px; line-height:1;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .05s ease;
+}
+.nav-desktop a:hover{ background:#d50000; border-color:#d50000; color:#fff; transform:translateY(-1px); }
+.nav-desktop a:focus-visible{ outline:none; box-shadow:0 0 0 3px rgba(213,0,0,.25); border-color:#d50000; }
+
+/* Carrinho combinando com os chips */
+.navwrap .btn{
+  padding:10px 14px; border-radius:999px; border:1px solid #111; background:#111; color:#fff;
+  font-weight:700; line-height:1;
+}
+.navwrap .btn:hover{ filter:brightness(.95); }
+
+/* Evita quebra de linha no desktop largo */
+@media (min-width: 901px){
+  .header .container.bar{ height:84px; }
+}
+
+/* Mobile mantém o comportamento atual (hamburger + logo central) */
+@media (max-width: 900px){
+  .header .container.bar{ grid-template-columns: 1fr; height:auto; }
+  .navwrap{ display:none; }
+}
+.header{ box-shadow: 0 2px 14px rgba(0,0,0,.06); }
