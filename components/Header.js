@@ -1,13 +1,15 @@
 import Link from "next/link";
 import MobileMenu from "@/components/MobileMenu";
+import CartBadge from "@/components/CartBadge"; // ⬅ importa o contador
 
 export default function Header() {
   return (
     <header className="header">
       <div className="container bar" style={{ display: "flex", alignItems: "center", gap: "16px" }}>
 
-        {/* Grupo esquerdo: logo + hamburger (mobile) */}
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        {/* Esquerda: logo + hamburger (mobile) */}
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", position: "relative" }}>
+          <MobileMenu />
           <Link href="/" aria-label="Ares Sports - Início">
             <img
               src="/logo.png"
@@ -15,9 +17,6 @@ export default function Header() {
               style={{ height: "80px", marginTop: "-8px" }}
             />
           </Link>
-
-          {/* Botão HAMBURGER fica colado na logo */}
-          <MobileMenu />
         </div>
 
         {/* Busca (cresce no meio) */}
@@ -32,7 +31,7 @@ export default function Header() {
           <button type="submit">Buscar</button>
         </form>
 
-        {/* Menu DESKTOP (esconde no mobile via CSS) */}
+        {/* Menu DESKTOP */}
         <nav className="nav nav-desktop" aria-label="Categorias" style={{ display: "flex", gap: "15px" }}>
           <Link href="/c/brasileiros">Brasileiros</Link>
           <Link href="/c/internacionais">Internacionais</Link>
@@ -41,6 +40,11 @@ export default function Header() {
           <Link href="/c/infantil">Infantil</Link>
           <Link href="/guia-de-medidas">Guia de Medidas</Link>
         </nav>
+
+        {/* Carrinho no DESKTOP (sempre visível à direita) */}
+        <div className="cart-desktop">
+          <CartBadge />
+        </div>
       </div>
     </header>
   );

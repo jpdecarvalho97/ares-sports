@@ -251,3 +251,10 @@ img, video { max-width: 100%; height: auto; display: block; }
   border-color:#111;
   color:#fff;
 }
+/* Carrinho fixo no topo (desktop) */
+.cart-desktop { display: flex; }
+
+/* No mobile, escondemos o botão do topo (já existe no menu hambúrguer) */
+@media (max-width: 900px) {
+  .cart-desktop { display: none !important; }
+}
