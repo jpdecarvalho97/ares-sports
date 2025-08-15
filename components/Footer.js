@@ -24,7 +24,7 @@ export default function Footer() {
             className="instagram-link"
             aria-label="Instagram da Ares Sports"
           >
-            <img src="/icons/instagram.svg" alt="" aria-hidden="true" />
+            <img src="/icons/instagram.jpg" alt="" aria-hidden="true" />
             <span>Instagram</span>
           </a>
         </div>
