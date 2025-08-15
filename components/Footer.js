@@ -22,7 +22,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <img src="/icons/instagram.svg" alt="Instagram" />
+            <img src="/icons/instagram.jpg" alt="Instagram" />
           </a>
         </div>
       </div>
