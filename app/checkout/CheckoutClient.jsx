@@ -1,6 +1,6 @@
 'use client'
 
-import { useCart } from "@/lib/cart";
+import { useCart } from "../../lib/cart";
 import { useState } from "react";
 
 export default function CheckoutClient(){
@@ -69,13 +69,6 @@ export default function CheckoutClient(){
       console.error(err);
       alert(err.message || "Erro ao gerar PIX");
     }
-  }
-
-)
-    });
-    const out = await res.json();
-    setPix(out);
-    setStep("pix");
   }
 
   return (

@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ProductCard from "@/components/ProductCard";
-import { products } from "@/lib/data";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import ProductCard from "../../components/ProductCard";
+import { products } from "../../lib/data";
 
 function norm(s=""){
   return s.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu,"");

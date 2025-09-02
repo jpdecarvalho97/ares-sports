@@ -1,8 +1,8 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ProductCard from "@/components/ProductCard";
-import { products } from "@/lib/data";
-import { CartProvider } from "@/lib/cart";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import ProductCard from "../components/ProductCard";
+import { products } from "../lib/data";
+import { CartProvider } from "../lib/cart";
 
 const HERO = {
   badge: "Lançamentos oficiais",

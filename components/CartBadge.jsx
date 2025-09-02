@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import { useCart } from "@/lib/cart";
+import { useCart } from "../lib/cart";
 
 export default function CartBadge() {
   const cart = useCart();

@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ProductCard from "@/components/ProductCard";
-import { products } from "@/lib/data";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import ProductCard from "../../../components/ProductCard";
+import { products } from "../../../lib/data";
 
 export default function CategoryPage({ params }){
   const items = products.filter(p=>p.category===params.slug);

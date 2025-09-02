@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { products, categories } from "@/lib/data";
+import { products, categories } from "../lib/data";
 
 function norm(s=""){
   return s.toLowerCase()

@@ -1,9 +1,9 @@
 'use client'
 import { useState } from "react";
-import { useCart } from "@/lib/cart";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { products } from "@/lib/data";
+import { useCart } from "../../../lib/cart";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import { products } from "../../../lib/data";
 
 const ALL_SIZES = ["P", "M", "G", "GG", "XG", "XGG"];
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import MobileMenu from "@/components/MobileMenu";
-import CartBadge from "@/components/CartBadge";
+import MobileMenu from "./MobileMenu";
+import CartBadge from "./CartBadge";
 
 export default function Header() {
   return (
