@@ -1,6 +1,6 @@
 // app/api/checkout/pix/route.js
 import { NextResponse } from "next/server";
-import { createCustomer, createOrder, payWithPix } from "@/lib/appmax";
+import { createCustomer, createOrder, payWithPix } from "../../../lib/appmax";
 
 export async function POST(req) {
   try {
